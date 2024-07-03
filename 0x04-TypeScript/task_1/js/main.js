@@ -14,3 +14,21 @@ var director1 = {
     numberOfReports: 17,
 };
 console.log(director1);
+// function to print teachers
+function printTeacher(firstName, lastName) {
+    return firstName.charAt(0) + "." + lastName;
+}
+printTeacher("John", "Doe");
+var StudentClass = /** @class */ (function () {
+    function StudentClass(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    StudentClass.prototype.workOnHomework = function () {
+        return 'Currently working';
+    };
+    StudentClass.prototype.displayName = function () {
+        return this.firstName;
+    };
+    return StudentClass;
+}());

@@ -29,3 +29,38 @@ const teacher3: Teacher = {
     numberOfReports: 17,
   };
   console.log(director1);
+
+  // function to print teachers
+
+function printTeacher(firstName, lastName) {
+    return firstName.charAt(0) + "." + lastName;
+}
+printTeacher("John", "Doe")
+
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+interface StudentName {
+    firstName: string;
+    lastName: string;
+}
+interface StudentNameConstructor {
+    new(firstName: string, lastName: string): StudentName;
+
+}
+class StudentClass implements StudentName {
+    firstName: string;
+    lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    workOnHomework(): string {
+        return 'Currently working';
+    }
+    displayName(): string {
+        return this.firstName;
+    }
+}
